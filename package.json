@@ -1,0 +1,17 @@
+{
+  "name": "acms",
+  "version": "1.0.0",
+  "description": "Official Website For Ananda College Mathematics Society",
+  "license": "ISC",
+  "author": "Yesith Sankalpa",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11"
+  }
+}
