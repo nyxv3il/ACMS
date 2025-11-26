@@ -4,8 +4,6 @@ const contactForm = document.getElementById("contactForm");
 const formStatus = document.querySelector(".formStatus");
 const previousBoardsModal = document.getElementById("previousBoardsModal");
 const openPreviousBoardsButton = document.getElementById("openPreviousBoards");
-const contactModal = document.getElementById("contactModal");
-const openContactFormButton = document.getElementById("openContactForm");
 const modalCloseTriggers = document.querySelectorAll("[data-modal-close]");
 
 navToggle.addEventListener("click", (e) => {
@@ -43,44 +41,34 @@ if (contactForm) {
   });
 }
 
-const openModal = (modal) => {
-  if (!modal) return;
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
+const openModal = () => {
+  if (!previousBoardsModal) return;
+  previousBoardsModal.classList.add("is-open");
+  previousBoardsModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");
 };
 
-const closeModal = (modal) => {
-  if (!modal) return;
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
+const closeModal = () => {
+  if (!previousBoardsModal) return;
+  previousBoardsModal.classList.remove("is-open");
+  previousBoardsModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("no-scroll");
 };
 
-const openPreviousBoardsModal = () => openModal(previousBoardsModal);
-const openContactModal = () => openModal(contactModal);
-
 if (openPreviousBoardsButton) {
-  openPreviousBoardsButton.addEventListener("click", openPreviousBoardsModal);
-}
-
-if (openContactFormButton) {
-  openContactFormButton.addEventListener("click", openContactModal);
+  openPreviousBoardsButton.addEventListener("click", openModal);
 }
 
 modalCloseTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    const modal = trigger.closest(".modal");
-    closeModal(modal);
-  });
+  trigger.addEventListener("click", closeModal);
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal.is-open");
-    if (openModal) {
-      closeModal(openModal);
-    }
+  if (
+    event.key === "Escape" &&
+    previousBoardsModal?.classList.contains("is-open")
+  ) {
+    closeModal();
   }
 });
 

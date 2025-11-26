@@ -26,18 +26,9 @@ app.get("/health", (req, res) => {
 });
 
 app.post("/api/contact", async (req, res) => {
-  const { name, email, mobile, admission, grade, subject, message } =
-    req.body || {};
+  const { name, email, subject, message } = req.body || {};
 
-  if (
-    !name ||
-    !email ||
-    !mobile ||
-    !admission ||
-    !grade ||
-    !subject ||
-    !message
-  ) {
+  if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
@@ -57,7 +48,7 @@ app.post("/api/contact", async (req, res) => {
       to: process.env.CONTACT_TO || process.env.SMTP_USER,
       replyTo: email,
       subject: `[ACMS Contact] ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nAdmission Number: ${admission}\nGrade: ${grade}\n\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
 
     res.json({ success: true });
