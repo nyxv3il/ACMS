@@ -187,17 +187,50 @@
           <div class="board-members">
             <div class="heading">Board Members</div>
             <div class="list">
-              <span>Tharana Bandara</span>
-              <span>Abhiman Sanhida</span>
-              <span>Januka Athukorala</span>
-              <span>Visal Wathmira</span>
-              <span>Sanuga Ubayarathna</span>
-              <span>Nethum Fernando</span>
-              <span>Lisath Walisundara</span>
-              <span>Senuka Sensara</span>
-              <span>Himesh Nethum</span>
-              <span>Dhanik Sellahewa</span>
-              <span>Sathija Nimthara</span>
+              <span
+                >Tharana Bandara -
+                <p>Vice President</p></span
+              >
+              <span
+                >Abhiman Sanhida -
+                <p>Assistant Secretary</p></span
+              >
+              <span
+                >Januka Athukorala -
+                <p>Assistant Treasurer</p></span
+              >
+              <span
+                >Visal Wathmira -
+                <p>Media Coordinator</p></span
+              >
+              <span
+                >Sanuga Ubayarathna -
+                <p>Quiz Coordinator</p></span
+              >
+              <span
+                >Nethum Fernando -
+                <p>Editor</p></span
+              >
+              <span
+                >Lisath Walisundara -
+                <p>Organizer</p></span
+              >
+              <span
+                >Senuka Sensara -
+                <p>Organizer</p>
+              </span>
+              <span
+                >Himesh Nethum -
+                <p>Organizer</p></span
+              >
+              <span
+                >Dhanik Sellahewa -
+                <p>Organizer</p></span
+              >
+              <span
+                >Sathija Nimthara -
+                <p>Organizer</p></span
+              >
             </div>
           </div>
           <div class="past-boards">
@@ -214,7 +247,7 @@
               <img
                 src="/board/twentytwentythree.jpg"
                 alt="Board Photo"
-                class="twentytwentytwo"
+                class="twentytwentythree"
               />
             </div>
             <div class="container">
@@ -222,7 +255,15 @@
               <img
                 src="/board/twentytwentyfour.jpg"
                 alt="Board Photo"
-                class="twentytwentytwo"
+                class="twentytwentyfour"
+              />
+            </div>
+            <div class="container">
+              <h1 class="twentytwentytwo">Board Of The Year 2025/2026</h1>
+              <img
+                src="/board/twentytwentyfive.jpg"
+                alt="Board Photo"
+                class="twentytwentyfive"
               />
             </div>
           </div>
@@ -272,6 +313,84 @@
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="content contactContent">
+          <div class="contactIntro">
+            <p class="sectionHeading">Contact</p>
+            <p class="contactLead">
+              Have a question, want to collaborate, or just want to learn more
+              about our initiatives? Drop us a line using the form or reach out
+              directly to our board members.
+            </p>
+
+            <div class="contactNumbers" role="list">
+              <article class="contactNumberCard" role="listitem">
+                <p class="contactRole">President</p>
+                <p class="contactName">Manuja Abewardhana</p>
+                <a class="contactPhone" href="tel:+94771234567"
+                  >+94 77 123 4567</a
+                >
+              </article>
+              <article class="contactNumberCard" role="listitem">
+                <p class="contactRole">Joint Secretary</p>
+                <p class="contactName">Javiru Jinasena</p>
+                <a class="contactPhone" href="tel:+94771239854"
+                  >+94 77 123 9854</a
+                >
+              </article>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contactForm" novalidate>
+            <div class="inputGroup">
+              <label for="contactName">Full Name</label>
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="inputGroup">
+              <label for="contactEmail">Email</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="inputGroup">
+              <label for="contactSubject">Subject</label>
+              <input
+                type="text"
+                id="contactSubject"
+                name="subject"
+                placeholder="I'm interested in..."
+                required
+              />
+            </div>
+            <div class="inputGroup">
+              <label for="contactMessage">Message</label>
+              <textarea
+                id="contactMessage"
+                name="message"
+                rows="5"
+                placeholder="Tell us how we can help"
+                required
+              ></textarea>
+            </div>
+
+            <div class="formActions">
+              <button type="submit" class="contactSubmit">Send Message</button>
+              <p class="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </section>
     </main>

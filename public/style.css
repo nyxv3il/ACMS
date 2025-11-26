@@ -201,6 +201,7 @@ section .content {
   gap: clamp(1.5rem, 3vw, 2.5rem);
   background: transparent;
   align-items: center;
+  justify-content: center;
 }
 
 #main {
@@ -362,8 +363,12 @@ section .content .sectionHeading {
 #board .content .board-members .list span {
   font-weight: 400;
   width: 100%;
-  max-width: 200px;
+  max-width: 350px;
   font-size: 16px;
+}
+
+#board .content .board-members .list span p {
+  font-weight: 200;
 }
 
 #board .content .board-members .list {
@@ -488,7 +493,159 @@ section .content .sectionHeading {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
+#contact {
+  min-height: auto;
+}
+
+.contactContent {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 2;
+}
+
+.contactIntro,
+.contactForm {
+  flex: 1 1 360px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0 20px var(--surface-glow);
+  width: min(100%, 520px);
+  max-width: 520px;
+  min-width: 280px;
+}
+
+.contactLead {
+  font-weight: 300;
+  color: rgba(253, 246, 235, 0.9);
+}
+
+.contactNumbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.contactNumberCard {
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contactRole {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2rem;
+  color: rgba(255, 215, 165, 0.8);
+}
+
+.contactName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contactPhone {
+  color: var(--hover);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactPhone:hover,
+.contactPhone:focus-visible {
+  text-decoration: underline;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(100%, 520px);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: var(--hover);
+  box-shadow: 0 0 0 3px rgba(216, 158, 34, 0.25);
+}
+
+.contactSubmit {
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--button);
+  color: #2b0000;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactSubmit:hover,
+.contactSubmit:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.formActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formStatus {
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--hover);
+}
+
 @media screen and (max-width: 900px) {
+  .contactContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactIntro,
+  .contactForm,
+  .contactNumbers {
+    max-width: min(520px, 100%);
+    width: 100%;
+  }
+
   #board .content .cardContainer .card {
     flex: 1 1 calc(50% - 30px);
   }
@@ -597,6 +754,23 @@ section .content .sectionHeading {
 @media screen and (max-width: 600px) {
   nav {
     padding: 0 1rem;
+  }
+
+  .contactNumbers {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .contactNumberCard {
+    width: 100%;
+  }
+
+  .contactForm {
+    max-width: 100%;
+    width: 100%;
+    padding: clamp(1.2rem, 6vw, 1.6rem);
   }
 
   #main .content {
