@@ -7,6 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = "127.0.0.1";
 
+require("./extrastuff")(app);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
