@@ -71,3 +71,11 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+
+document.getElementById("joinusBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.open(
+    "https://docs.google.com/forms/d/e/1FAIpQLSerlMCEtkZGH-eFunZyPiv1vsia88wSrp7Y2dyIlXE5BpdOfw/viewform?usp=dialog",
+    "_blank"
+  );
+});

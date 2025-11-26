@@ -269,12 +269,12 @@ section .content {
   color: #2b0000;
   box-shadow: 0 10px 35px var(--surface-glow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
 }
 
 #main .content .joinus:hover {
   cursor: pointer;
   transform: translateY(-2px);
-  box-shadow: var(--hover) 0 10px 25px;
 }
 
 section .content .sectionHeading {
@@ -384,6 +384,20 @@ section .content .sectionHeading {
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
+}
+
+#board .content .board-members .list span:nth-child(-n + 2) {
+  background: linear-gradient(135deg, #fef3d7, #ffeab5);
+  color: #221200;
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 186, 73, 0.35);
+  font-weight: 600;
+}
+
+#board .content .board-members .list span:nth-child(-n + 2) p {
+  color: #5c3c00;
+  font-weight: 500;
 }
 
 #board .content .board-members .heading {
