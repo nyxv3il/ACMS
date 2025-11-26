@@ -382,58 +382,123 @@
                 >
               </article>
             </div>
+
+            <button
+              id="openContactForm"
+              class="contact-form-button"
+              type="button"
+            >
+              Send us a Message
+            </button>
           </div>
-
-          <form id="contactForm" class="contactForm" novalidate>
-            <div class="inputGroup">
-              <label for="contactName">Full Name</label>
-              <input
-                type="text"
-                id="contactName"
-                name="name"
-                placeholder="John Doe"
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactEmail">Email</label>
-              <input
-                type="email"
-                id="contactEmail"
-                name="email"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactSubject">Subject</label>
-              <input
-                type="text"
-                id="contactSubject"
-                name="subject"
-                placeholder="I'm interested in..."
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactMessage">Message</label>
-              <textarea
-                id="contactMessage"
-                name="message"
-                rows="5"
-                placeholder="Tell us how we can help"
-                required
-              ></textarea>
-            </div>
-
-            <div class="formActions">
-              <button type="submit" class="contactSubmit">Send Message</button>
-              <p class="formStatus" role="status" aria-live="polite"></p>
-            </div>
-          </form>
         </div>
       </section>
     </main>
+
+    <div
+      id="contactModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactFormTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-overlay" data-modal-close></div>
+      <div class="modal-dialog" role="document">
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Close Contact Form"
+          data-modal-close
+        >
+          &times;
+        </button>
+        <h2 id="contactFormTitle" class="sectionHeading">Send us a Message</h2>
+        <form id="contactForm" class="contactForm" novalidate>
+          <div class="inputGroup">
+            <label for="contactName">Full Name</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <div class="inputGroup">
+            <label for="contactEmail">Email</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="inputGroup">
+            <label for="contactMobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="contactMobile"
+              name="mobile"
+              placeholder="+94 XX XXX XXXX"
+              required
+            />
+          </div>
+          <div class="inputGroup">
+            <label for="contactAdmission">Admission Number</label>
+            <input
+              type="text"
+              id="contactAdmission"
+              name="admission"
+              placeholder="e.g., 12345"
+              required
+            />
+          </div>
+          <div class="inputGroup">
+            <label for="contactGrade">Grade</label>
+            <select id="contactGrade" name="grade" required>
+              <option value="">Select your grade</option>
+              <option value="6">Grade 6</option>
+              <option value="7">Grade 7</option>
+              <option value="8">Grade 8</option>
+              <option value="9">Grade 9</option>
+              <option value="10">Grade 10</option>
+              <option value="11">Grade 11</option>
+              <option value="12">Grade 12</option>
+              <option value="13">Grade 13</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="inputGroup">
+            <label for="contactSubject">Subject</label>
+            <input
+              type="text"
+              id="contactSubject"
+              name="subject"
+              placeholder="I'm interested in..."
+              autofocus
+              required
+            />
+          </div>
+          <div class="inputGroup">
+            <label for="contactMessage">Message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="5"
+              placeholder="Tell us how we can help"
+              required
+            ></textarea>
+          </div>
+
+          <div class="formActions">
+            <button type="submit" class="contactSubmit">Send Message</button>
+            <p class="formStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="footerContent">
