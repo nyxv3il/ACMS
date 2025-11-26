@@ -76,13 +76,6 @@
             >
           </li>
           <li class="navItem">
-            <a href="#previous-boards"
-              ><button class="navButton" type="button">
-                Previous Boards
-              </button></a
-            >
-          </li>
-          <li class="navItem">
             <a href="#projects"
               ><button class="navButton" type="button">Projects</button></a
             >
@@ -199,6 +192,10 @@
                 <p>Vice President</p></span
               >
               <span
+                >Dulina Meegahawatte -
+                <p>Chief Coordinator</p></span
+              >
+              <span
                 >Abhiman Sanhida -
                 <p>Assistant Secretary</p></span
               >
@@ -252,12 +249,37 @@
               class="current-board-img"
             />
           </div>
+          <button
+            id="openPreviousBoards"
+            class="view-previous-boards"
+            type="button"
+          >
+            View Previous Boards
+          </button>
         </div>
       </section>
 
-      <section id="previous-boards">
-        <div class="content">
-          <h2 class="sectionHeading">Previous Boards</h2>
+      <div
+        id="previousBoardsModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="previousBoardsTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="modal-dialog" role="document">
+          <button
+            class="modal-close"
+            type="button"
+            aria-label="Close Previous Boards"
+            data-modal-close
+          >
+            &times;
+          </button>
+          <h2 id="previousBoardsTitle" class="sectionHeading">
+            Previous Boards
+          </h2>
           <div class="past-boards">
             <div class="container">
               <h3 class="past-board-title">Board Of The Year 2022</h3>
@@ -285,7 +307,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <section id="projects">
         <div class="content">
@@ -335,6 +357,7 @@
 
       <section id="contact">
         <div class="content contactContent">
+          <h1 class="sectionHeading">Contact Us</h1>
           <div class="contactIntro">
             <p class="sectionHeading">Contact</p>
             <p class="contactLead">

@@ -2,6 +2,9 @@ const navToggle = document.getElementById("navToggle");
 const nav = document.getElementById("nav");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.querySelector(".formStatus");
+const previousBoardsModal = document.getElementById("previousBoardsModal");
+const openPreviousBoardsButton = document.getElementById("openPreviousBoards");
+const modalCloseTriggers = document.querySelectorAll("[data-modal-close]");
 
 navToggle.addEventListener("click", (e) => {
   e.preventDefault();
@@ -37,3 +40,34 @@ if (contactForm) {
     }
   });
 }
+
+const openModal = () => {
+  if (!previousBoardsModal) return;
+  previousBoardsModal.classList.add("is-open");
+  previousBoardsModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+};
+
+const closeModal = () => {
+  if (!previousBoardsModal) return;
+  previousBoardsModal.classList.remove("is-open");
+  previousBoardsModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+};
+
+if (openPreviousBoardsButton) {
+  openPreviousBoardsButton.addEventListener("click", openModal);
+}
+
+modalCloseTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", closeModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    previousBoardsModal?.classList.contains("is-open")
+  ) {
+    closeModal();
+  }
+});

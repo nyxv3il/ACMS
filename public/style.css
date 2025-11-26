@@ -401,6 +401,19 @@ section .content .sectionHeading {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  #board .content .current-board-photo .board-photo-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #board .content .current-board-photo .board-photo-title {
+    font-size: 16px;
+  }
 }
 
 #board .content .current-board-photo .current-board-img {
@@ -408,8 +421,28 @@ section .content .sectionHeading {
   width: 100%;
 }
 
-#board .content .past-boards,
-#previous-boards .content .past-boards {
+.view-previous-boards {
+  margin-top: 30px;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--button);
+  color: #2b0000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+.view-previous-boards:hover,
+.view-previous-boards:focus-visible {
+  transform: translateY(-2px);
+  background: var(--hover);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+.past-boards {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -419,17 +452,74 @@ section .content .sectionHeading {
   z-index: 2;
 }
 
-#board .content .past-boards .past-board-title,
-#previous-boards .content .past-boards .past-board-title {
+.past-boards .past-board-title {
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: 500;
 }
 
-#board .content .past-boards .container img,
-#previous-boards .content .past-boards .container img {
+.past-boards .container img {
   width: 100%;
   border-radius: 16px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 0, 5, 0.95);
+  border: 1px solid var(--surface-border);
+  border-radius: 24px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  max-height: min(90vh, 900px);
+  overflow-y: auto;
+  width: min(900px, 100%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal .past-boards {
+  margin-top: 20px;
+}
+
+.modal .container img {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 #projects .content {
@@ -675,13 +765,13 @@ section .content .sectionHeading {
     flex: 1 1 calc(50% - 30px);
   }
 
-  #board .content .past-boards .container h1 {
+  .past-boards .past-board-title {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #board .content .past-boards .container h1 {
+  .past-boards .past-board-title {
     font-size: 18px;
   }
 
@@ -693,7 +783,7 @@ section .content .sectionHeading {
     flex: 1 1 100%;
   }
 
-  #previous-boards .content .past-boards .past-board-title {
+  .modal .past-boards .past-board-title {
     font-size: 20px;
   }
 }
@@ -848,7 +938,7 @@ section .content .sectionHeading {
 }
 
 @media screen and (max-width: 420px) {
-  #board .content .past-boards .container h1 {
+  .past-boards .past-board-title {
     font-size: 16px;
   }
 
@@ -881,7 +971,7 @@ section .content .sectionHeading {
     font-size: 1rem;
   }
 
-  #previous-boards .content .past-boards .past-board-title {
+  .modal .past-boards .past-board-title {
     font-size: 16px;
   }
 
