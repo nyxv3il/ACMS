@@ -283,6 +283,12 @@ section .content .sectionHeading {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  section .content .sectionHeading {
+    font-size: 25px;
+  }
+}
+
 /* #about {
   justify-content: center;
   align-items: center;
@@ -386,7 +392,24 @@ section .content .sectionHeading {
   font-size: 17px;
 }
 
-#board .content .past-boards {
+#board .content .current-board-photo {
+  width: 100%;
+  max-width: 1200px;
+}
+
+#board .content .current-board-photo .board-photo-title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#board .content .current-board-photo .current-board-img {
+  border-radius: 16px;
+  width: 100%;
+}
+
+#board .content .past-boards,
+#previous-boards .content .past-boards {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -396,13 +419,15 @@ section .content .sectionHeading {
   z-index: 2;
 }
 
-#board .content .past-boards .container h1 {
+#board .content .past-boards .past-board-title,
+#previous-boards .content .past-boards .past-board-title {
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: 500;
 }
 
-#board .content .past-boards .container img {
+#board .content .past-boards .container img,
+#previous-boards .content .past-boards .container img {
   width: 100%;
   border-radius: 16px;
 }
@@ -667,6 +692,10 @@ section .content .sectionHeading {
   #board .content .cardContainer .card {
     flex: 1 1 100%;
   }
+
+  #previous-boards .content .past-boards .past-board-title {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -683,16 +712,6 @@ section .content .sectionHeading {
 
   #main .content .titlecontainer .tagline {
     letter-spacing: 0.4rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  nav {
-    height: 56px;
-  }
-
-  nav .navBrand .navLogo {
-    width: 45px;
   }
 
   .navLinks {
@@ -736,6 +755,16 @@ section .content .sectionHeading {
     font-size: 1rem;
     display: block;
     padding: 0.3rem 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    height: 56px;
+  }
+
+  nav .navBrand .navLogo {
+    width: 45px;
   }
 
   #main .content {
@@ -850,6 +879,10 @@ section .content .sectionHeading {
     width: 38px;
     height: 38px;
     font-size: 1rem;
+  }
+
+  #previous-boards .content .past-boards .past-board-title {
+    font-size: 16px;
   }
 
   .navLinks {
