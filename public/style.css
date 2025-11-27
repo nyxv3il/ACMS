@@ -16,6 +16,36 @@
     #ffdf9f 100%
   );
 }
+
+/* Custom Scrollbar with Golden Theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--button);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--button) rgba(0, 0, 0, 0.1);
+}
+
 /* 
 :root {
   --main: #000013;
@@ -171,7 +201,7 @@ section {
   background: transparent;
   position: relative;
   z-index: 2;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 section::after {
@@ -196,7 +226,7 @@ section .content {
   flex-direction: column;
   width: min(1600px, 100%);
   min-height: 100%;
-  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 4rem);
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
   margin: 0 auto;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   background: transparent;
@@ -622,10 +652,241 @@ body.no-scroll {
   z-index: 2;
 }
 
+#achievements .content .cardContainer .card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(5px);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 clamp(260px, 32vw, 360px);
+  max-width: 380px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 2;
+  padding: 1.75rem;
+}
+
+#achievements .content .cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+#achievements .content .cardContainer .card:hover,
+#achievements .content .cardContainer .card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+  border-color: var(--hover);
+}
+
+#achievements .content .cardContainer .card .cardTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--button);
+  background: var(--title-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#achievements .content .cardContainer .card .cardDesc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+#achievements .content .cardContainer .card .learnMore {
+  background: var(--button);
+  color: #000;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#achievements .content .cardContainer .card .learnMore:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(216, 158, 34, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal.is-open {
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.modal-dialog {
+  position: relative;
+  background: var(--cards);
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  margin: 2rem auto;
+  z-index: 10001;
+  padding: 2.5rem;
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.modal.is-open .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 10002;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--hover);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-content h2 {
+  color: var(--button);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  background: var(--title-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Modal Styles */
+@media screen and (max-width: 900px) {
+  .modal-dialog {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-dialog {
+    padding: 1rem;
+    margin: 0.5rem auto;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .modal-close {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .modal-dialog {
+    padding: 2rem;
+    margin: 0.25rem auto;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p {
+    font-size: 0.85rem;
+  }
+}
+
 .projectCard:hover,
 .projectCard:focus-within {
   transform: translateY(-6px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+  border-color: var(--hover);
 }
 
 .projectCardImage {
@@ -688,6 +949,30 @@ body.no-scroll {
 .projectModalContent p {
   font-size: 1rem;
   font-weight: 300;
+}
+
+/* Responsive Project Modal Styles */
+@media screen and (max-width: 900px) {
+  .projectModalContent p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectModalContent {
+    margin-top: 1rem;
+  }
+
+  .projectModalContent p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .projectModalContent p {
+    font-size: 0.85rem;
+  }
 }
 
 #contact {

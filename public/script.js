@@ -12,6 +12,9 @@ const projectModalCloseTriggers = document.querySelectorAll(
   "[data-project-modal-close]"
 );
 const projectButtons = document.querySelectorAll("[data-project]");
+const achievementModal = document.getElementById("achievementModal");
+const achievementModalCloseTriggers =
+  document.querySelectorAll("[data-modal-close]");
 
 // Project descriptions
 const projectDescriptions = {
@@ -128,6 +131,42 @@ projectModalCloseTriggers.forEach((trigger) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && projectModal?.classList.contains("is-open")) {
     closeProjectModal();
+  }
+});
+
+// Achievement modal functions
+const openAchievementModal = () => {
+  if (!achievementModal) return;
+  achievementModal.classList.add("is-open");
+  achievementModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+};
+
+const closeAchievementModal = () => {
+  if (!achievementModal) return;
+  achievementModal.classList.remove("is-open");
+  achievementModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+};
+
+// Achievement modal event listeners
+document.addEventListener("click", (e) => {
+  if (e.target.matches("[data-modal='achievementModal']")) {
+    e.preventDefault();
+    openAchievementModal();
+  }
+});
+
+achievementModalCloseTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", closeAchievementModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    achievementModal?.classList.contains("is-open")
+  ) {
+    closeAchievementModal();
   }
 });
 
