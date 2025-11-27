@@ -1131,16 +1131,16 @@ body.no-scroll {
     font-size: 16px;
   }
 
-  #board .content .board-members .list span {
-    max-width: 80px;
-    font-size: 14px;
-  }
-
   .site-footer .footerContent {
     flex-direction: column;
   }
 
   .footerGrid {
+    width: 100%;
+  }
+
+  #board .content .board-members .list span {
+    max-width: none;
     width: 100%;
   }
 }
@@ -1152,11 +1152,6 @@ body.no-scroll {
 
   #board .content .board-members .heading {
     font-size: 14px;
-  }
-
-  #board .content .board-members .list span {
-    max-width: none;
-    width: 100%;
   }
 
   nav {
