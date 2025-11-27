@@ -154,33 +154,37 @@
         <div class="content">
           <h2 class="boardTitle sectionHeading">Board Of Officials</h2>
           <div class="cardContainer">
-            <div class="card">
-              <img src="/board/manuja.jpg" alt="President" class="cardImg" />
-              <div class="cardInfo">
-                <h3 class="cardName">Manuja Abewardhana</h3>
-                <p class="cardTitle">President</p>
+            <div class="president">
+              <div class="card">
+                <img src="/board/manuja.jpg" alt="President" class="cardImg" />
+                <div class="cardInfo">
+                  <h3 class="cardName">Manuja Abewardhana</h3>
+                  <p class="cardTitle">President</p>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <img
-                src="/board/javiru.jpg"
-                alt="Joint Secretary"
-                class="cardImg"
-              />
-              <div class="cardInfo">
-                <h3 class="cardName">Javiru Jinasena</h3>
-                <p class="cardTitle">Joint Secretary</p>
+            <div class="others">
+              <div class="card">
+                <img
+                  src="/board/javiru.jpg"
+                  alt="Joint Secretary"
+                  class="cardImg"
+                />
+                <div class="cardInfo">
+                  <h3 class="cardName">Javiru Jinasena</h3>
+                  <p class="cardTitle">Joint Secretary</p>
+                </div>
               </div>
-            </div>
-            <div class="card">
-              <img
-                src="/board/dineth.jpg"
-                alt="Joint Secretary"
-                class="cardImg"
-              />
-              <div class="cardInfo">
-                <h3 class="cardName">Dineth Hettiarachchi</h3>
-                <p class="cardTitle">Joint Secretary</p>
+              <div class="card">
+                <img
+                  src="/board/dineth.jpg"
+                  alt="Joint Secretary"
+                  class="cardImg"
+                />
+                <div class="cardInfo">
+                  <h3 class="cardName">Dineth Hettiarachchi</h3>
+                  <p class="cardTitle">Joint Secretary</p>
+                </div>
               </div>
             </div>
           </div>
@@ -309,6 +313,29 @@
         </div>
       </div>
 
+      <div
+        id="projectModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="projectModalTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-overlay" data-project-modal-close></div>
+        <div class="modal-dialog" role="document">
+          <button
+            class="modal-close"
+            type="button"
+            aria-label="Close Project Details"
+            data-project-modal-close
+          >
+            &times;
+          </button>
+          <h2 id="projectModalTitle" class="sectionHeading"></h2>
+          <div id="projectModalContent" class="projectModalContent"></div>
+        </div>
+      </div>
+
       <section id="projects">
         <div class="content">
           <h2 class="projectsTitle sectionHeading">Projects</h2>
@@ -323,6 +350,13 @@
                 <p class="projectCardDesc">
                   Lorem ipsum dolor sit amet consectetur adipisicing
                 </p>
+                <button
+                  class="projectButton"
+                  type="button"
+                  data-project="apeiro"
+                >
+                  Learn More
+                </button>
               </div>
             </article>
             <article class="projectCard" role="listitem">
@@ -336,6 +370,13 @@
                 <p class="projectCardDesc">
                   Lorem ipsum dolor sit amet consectetur adipisicing
                 </p>
+                <button
+                  class="projectButton"
+                  type="button"
+                  data-project="mathematics"
+                >
+                  Learn More
+                </button>
               </div>
             </article>
             <article class="projectCard" role="listitem">
@@ -349,6 +390,13 @@
                 <p class="projectCardDesc">
                   Lorem ipsum dolor sit amet consectetur adipisicing
                 </p>
+                <button
+                  class="projectButton"
+                  type="button"
+                  data-project="numeracy"
+                >
+                  Learn More
+                </button>
               </div>
             </article>
           </div>
