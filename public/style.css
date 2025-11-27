@@ -595,8 +595,14 @@ body.no-scroll {
 
 .projectCardImage {
   width: 100%;
-  height: 190px;
+  height: 200px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 420px) {
+  .projectCardImage {
+    height: 150px;
+  }
 }
 
 .projectCardBody {
