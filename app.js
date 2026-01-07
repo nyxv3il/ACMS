@@ -12,8 +12,6 @@ const mailjet = Mailjet.apiConnect(
   process.env.MAILJET_SECRET_KEY
 );
 
-require("./extrastuff")(app);
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
