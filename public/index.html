@@ -1,597 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ACMS</title>
 
-    <!-- #### Links #### -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACMS</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- #### Links #### -->
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- #### /Links #### -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <script
-      src="https://kit.fontawesome.com/2ec9c6c2b6.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- #### /Links #### -->
 
-    <!-- #### Metadata #### -->
+  <script src="https://kit.fontawesome.com/2ec9c6c2b6.js" crossorigin="anonymous"></script>
 
-    <meta
-      name="description"
-      content="Official Website For Ananda College Mathematical Society."
-    />
+  <!-- #### Metadata #### -->
 
-    <meta property="og:title" content="ACMS" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="Official Website For Ananda College Mathematical Society."
-    />
-    <meta property="og:image" content="/banner.png" />
-    <meta property="og:url" content="https://acms-dev.duckdns.org" />
+  <meta name="description" content="Official Website For Ananda College Mathematical Society." />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ACMS" />
-    <meta
-      name="twitter:description"
-      content="Official Website For Ananda College Mathematical Society."
-    />
-    <meta name="twitter:image" content="/banner.png" />
+  <meta property="og:title" content="ACMS" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Official Website For Ananda College Mathematical Society." />
+  <meta property="og:image" content="/banner.png" />
+  <meta property="og:url" content="https://acms-dev.duckdns.org" />
 
-    <!-- #### /Metadata #### -->
-  </head>
-  <body>
-    <header class="site-header">
-      <nav aria-label="Primary">
-        <div class="navBrand">
-          <img src="/acms.png" alt="ACMS crest" class="navLogo" />
-          <p class="navTitle" aria-label="Ananda College Mathematics Society">
-            ACMS
-          </p>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ACMS" />
+  <meta name="twitter:description" content="Official Website For Ananda College Mathematical Society." />
+  <meta name="twitter:image" content="/banner.png" />
+
+  <!-- #### /Metadata #### -->
+</head>
+
+<body>
+  <header class="site-header">
+    <nav aria-label="Primary">
+      <div class="navBrand">
+        <img src="/acms.png" alt="ACMS crest" class="navLogo" />
+        <p class="navTitle" aria-label="Ananda College Mathematics Society">
+          ACMS
+        </p>
+      </div>
+      <ul id="nav" class="navLinks">
+        <li class="navItem">
+          <a href="#main"><button class="navButton" type="button">Home</button></a>
+        </li>
+        <li class="navItem">
+          <a href="#about"><button class="navButton" type="button">About</button></a>
+        </li>
+        <li class="navItem">
+          <a href="#board"><button class="navButton" type="button">Board</button></a>
+        </li>
+        <li class="navItem">
+          <a href="#projects"><button class="navButton" type="button">Projects</button></a>
+        </li>
+        <li class="navItem">
+          <a href="#achievements"><button class="navButton" type="button">Achievements</button></a>
+        </li>
+        <li class="navItem">
+          <a href="#contact"><button class="navButton" type="button">Contact</button></a>
+        </li>
+      </ul>
+      <button id="navToggle" class="fa-solid fa-bars" aria-label="Toggle navigation menu" aria-controls="nav"
+        aria-expanded="false" type="button"></button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="main">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="content">
+        <img src="/acms.png" alt="ACMS emblem" class="logo" />
+        <div class="titlecontainer">
+          <h1 class="title">Ananda College<br />Mathematics Society</h1>
+          <p class="tagline" role="doc-subtitle">Beyond The Zenith</p>
+          <button class="joinus" type="button" id="joinusBtn">Join Us</button>
         </div>
-        <ul id="nav" class="navLinks">
-          <li class="navItem">
-            <a href="#main"
-              ><button class="navButton" type="button">Home</button></a
-            >
-          </li>
-          <li class="navItem">
-            <a href="#about"
-              ><button class="navButton" type="button">About</button></a
-            >
-          </li>
-          <li class="navItem">
-            <a href="#board"
-              ><button class="navButton" type="button">Board</button></a
-            >
-          </li>
-          <li class="navItem">
-            <a href="#projects"
-              ><button class="navButton" type="button">Projects</button></a
-            >
-          </li>
-          <li class="navItem">
-            <a href="#achievements"
-              ><button class="navButton" type="button">Achievements</button></a
-            >
-          </li>
-          <li class="navItem">
-            <a href="#contact"
-              ><button class="navButton" type="button">Contact</button></a
-            >
-          </li>
-        </ul>
-        <button
-          id="navToggle"
-          class="fa-solid fa-bars"
-          aria-label="Toggle navigation menu"
-          aria-controls="nav"
-          aria-expanded="false"
-          type="button"
-        ></button>
-      </nav>
-    </header>
+      </div>
+    </section>
 
-    <main>
-      <section id="main">
-        <div class="bg" aria-hidden="true"></div>
-        <div class="content">
-          <img src="/acms.png" alt="ACMS emblem" class="logo" />
-          <div class="titlecontainer">
-            <h1 class="title">Ananda College<br />Mathematics Society</h1>
-            <p class="tagline" role="doc-subtitle">Beyond The Zenith</p>
-            <button class="joinus" type="button" id="joinusBtn">Join Us</button>
-          </div>
-        </div>
-      </section>
+    <section id="about">
+      <div class="content">
+        <h2 class="historyTitle sectionHeading">A Brief History</h2>
+        <p class="historyDesc">
+          The Ananda College Mathematics Society has a storied history that
+          dates back to its founding in 1953 within the esteemed Ananda
+          College in Colombo, Sri Lanka. The society's inception was driven by
+          the collective enthusiasm of a group of dedicated students and
+          teachers who shared a profound love for mathematics and a vision to
+          nurture mathematical talent. In its early years, the society
+          primarily focused on organizing math-related events, competitions,
+          and lectures within the school. These activities quickly gained
+          popularity and contributed to a deeper appreciation for mathematics
+          among the student body. The society encouraged students to engage in
+          mathematical research, fostering a culture of curiosity and
+          exploration. Throughout the years, the Ananda College Mathematics
+          Society evolved and expanded its reach. It began participating in
+          national and international math competitions, achieving remarkable
+          success and bringing recognition to both the society and the school.
+          Its members consistently garnered top honors, highlighting the
+          society's commitment to academic excellence. The society also played
+          a crucial role in promoting mathematical education beyond Ananda
+          College. It organized outreach programs, tutoring sessions, and
+          workshops for students from various schools, further cementing its
+          reputation as a beacon of mathematical knowledge and learning in Sri
+          Lanka. Today, the Ananda College Mathematics Society continues to
+          thrive, continuing its tradition of excellence in mathematics
+          education and research. It remains a vital part of the school's
+          legacy, inspiring students to explore the fascinating world of
+          mathematics and fostering a spirit of intellectual curiosity and
+          achievement.
+        </p>
+      </div>
+    </section>
 
-      <section id="about">
-        <div class="content">
-          <h2 class="historyTitle sectionHeading">A Brief History</h2>
-          <p class="historyDesc">
-            The Ananda College Mathematics Society has a storied history that
-            dates back to its founding in 1953 within the esteemed Ananda
-            College in Colombo, Sri Lanka. The society's inception was driven by
-            the collective enthusiasm of a group of dedicated students and
-            teachers who shared a profound love for mathematics and a vision to
-            nurture mathematical talent. In its early years, the society
-            primarily focused on organizing math-related events, competitions,
-            and lectures within the school. These activities quickly gained
-            popularity and contributed to a deeper appreciation for mathematics
-            among the student body. The society encouraged students to engage in
-            mathematical research, fostering a culture of curiosity and
-            exploration. Throughout the years, the Ananda College Mathematics
-            Society evolved and expanded its reach. It began participating in
-            national and international math competitions, achieving remarkable
-            success and bringing recognition to both the society and the school.
-            Its members consistently garnered top honors, highlighting the
-            society's commitment to academic excellence. The society also played
-            a crucial role in promoting mathematical education beyond Ananda
-            College. It organized outreach programs, tutoring sessions, and
-            workshops for students from various schools, further cementing its
-            reputation as a beacon of mathematical knowledge and learning in Sri
-            Lanka. Today, the Ananda College Mathematics Society continues to
-            thrive, continuing its tradition of excellence in mathematics
-            education and research. It remains a vital part of the school's
-            legacy, inspiring students to explore the fascinating world of
-            mathematics and fostering a spirit of intellectual curiosity and
-            achievement.
-          </p>
-        </div>
-      </section>
-
-      <section id="board">
-        <div class="content">
-          <h2 class="boardTitle sectionHeading">Board Of Officials</h2>
-          <div class="cardContainer">
-            <div class="president">
-              <div class="card">
-                <img src="/board/manuja.jpg" alt="President" class="cardImg" />
-                <div class="cardInfo">
-                  <h3 class="cardName">Manuja Abewardhana</h3>
-                  <p class="cardTitle">President</p>
-                </div>
-              </div>
-            </div>
-            <div class="others">
-              <div class="card">
-                <img
-                  src="/board/javiru.jpg"
-                  alt="Joint Secretary"
-                  class="cardImg"
-                />
-                <div class="cardInfo">
-                  <h3 class="cardName">Javiru Jinasena</h3>
-                  <p class="cardTitle">Joint Secretary</p>
-                </div>
-              </div>
-              <div class="card">
-                <img
-                  src="/board/dineth.jpg"
-                  alt="Joint Secretary"
-                  class="cardImg"
-                />
-                <div class="cardInfo">
-                  <h3 class="cardName">Dineth Hettiarachchi</h3>
-                  <p class="cardTitle">Joint Secretary</p>
-                </div>
+    <section id="board">
+      <div class="content">
+        <h2 class="boardTitle sectionHeading">Board Of Officials</h2>
+        <div class="cardContainer">
+          <div class="president">
+            <div class="card">
+              <img src="/board/manuja.jpg" alt="President" class="cardImg" />
+              <div class="cardInfo">
+                <h3 class="cardName">Manuja Abewardhana</h3>
+                <p class="cardTitle">President</p>
               </div>
             </div>
           </div>
-          <div class="board-members">
-            <div class="heading">Board Members</div>
-            <div class="list">
-              <span
-                >Dulina Meegahawatte -
-                <p>Chief Coordinator</p></span
-              >
-              <span
-                >Javith Bhashitha -
-                <p>Treasurer</p></span
-              >
-              <span
-                >Tharana Bandara -
-                <p>Vice President</p></span
-              >
-              <span
-                >Abhiman Sanhida -
-                <p>Assistant Secretary</p></span
-              >
-              <span
-                >Januka Athukorala -
-                <p>Assistant Treasurer</p></span
-              >
-              <span
-                >Visal Wathmira -
-                <p>Media Coordinator</p></span
-              >
-              <span
-                >Sanuga Ubayarathna -
-                <p>Quiz Coordinator</p></span
-              >
-              <span
-                >Nethum Fernando -
-                <p>Editor</p></span
-              >
-              <span
-                >Lisath Walisundara -
-                <p>Organizer</p></span
-              >
-              <span
-                >Senuka Sensara -
-                <p>Organizer</p>
-              </span>
-              <span
-                >Himesh Nethum -
-                <p>Organizer</p></span
-              >
-              <span
-                >Dhanik Sellahewa -
-                <p>Organizer</p></span
-              >
-              <span
-                >Sathija Nimthara -
-                <p>Organizer</p></span
-              >
+          <div class="others">
+            <div class="card">
+              <img src="/board/javiru.jpg" alt="Joint Secretary" class="cardImg" />
+              <div class="cardInfo">
+                <h3 class="cardName">Javiru Jinasena</h3>
+                <p class="cardTitle">Joint Secretary</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/board/dineth.jpg" alt="Joint Secretary" class="cardImg" />
+              <div class="cardInfo">
+                <h3 class="cardName">Dineth Hettiarachchi</h3>
+                <p class="cardTitle">Joint Secretary</p>
+              </div>
             </div>
           </div>
-          <div class="current-board-photo">
-            <h3 class="board-photo-title">Board Of The Year 2025/2026</h3>
-            <img
-              src="/board/twentytwentyfive.jpg"
-              alt="Board Photo"
-              class="current-board-img"
-            />
-          </div>
-          <button
-            id="openPreviousBoards"
-            class="view-previous-boards"
-            type="button"
-          >
-            View Previous Boards
-          </button>
         </div>
-      </section>
-      <div
-        id="previousBoardsModal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="previousBoardsTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-overlay" data-modal-close></div>
-        <div class="modal-dialog" role="document">
-          <button
-            class="modal-close"
-            type="button"
-            aria-label="Close Previous Boards"
-            data-modal-close
-          >
-            &times;
-          </button>
-          <h2 id="previousBoardsTitle" class="sectionHeading">
-            Previous Boards
-          </h2>
-          <div class="past-boards">
-            <div class="container">
-              <h3 class="past-board-title">Board Of The Year 2022</h3>
-              <img
-                src="/board/twentytwentytwo.jpg"
-                alt="Board Photo"
-                class="twentytwentytwo"
-              />
-            </div>
-            <div class="container">
-              <h3 class="past-board-title">Board Of The Year 2023/2024</h3>
-              <img
-                src="/board/twentytwentythree.jpg"
-                alt="Board Photo"
-                class="twentytwentythree"
-              />
-            </div>
-            <div class="container">
-              <h3 class="past-board-title">Board Of The Year 2024/2025</h3>
-              <img
-                src="/board/twentytwentyfour.jpg"
-                alt="Board Photo"
-                class="twentytwentyfour"
-              />
-            </div>
+        <div class="board-members">
+          <div class="heading">Board Members</div>
+          <div class="list">
+            <span>Dulina Meegahawatte -
+              <p>Chief Coordinator</p>
+            </span>
+            <span>Javith Bhashitha -
+              <p>Treasurer</p>
+            </span>
+            <span>Tharana Bandara -
+              <p>Vice President</p>
+            </span>
+            <span>Abhiman Sanhida -
+              <p>Assistant Secretary</p>
+            </span>
+            <span>Januka Athukorala -
+              <p>Assistant Treasurer</p>
+            </span>
+            <span>Visal Wathmira -
+              <p>Media Coordinator</p>
+            </span>
+            <span>Sanuga Ubayarathna -
+              <p>Quiz Coordinator</p>
+            </span>
+            <span>Nethum Fernando -
+              <p>Editor</p>
+            </span>
+            <span>Lisath Walisundara -
+              <p>Organizer</p>
+            </span>
+            <span>Senuka Sensara -
+              <p>Organizer</p>
+            </span>
+            <span>Himesh Nethum -
+              <p>Organizer</p>
+            </span>
+            <span>Dhanik Sellahewa -
+              <p>Organizer</p>
+            </span>
+            <span>Sathija Nimthara -
+              <p>Organizer</p>
+            </span>
+          </div>
+        </div>
+        <div class="current-board-photo">
+          <h3 class="board-photo-title">Board Of The Year 2025/2026</h3>
+          <img src="/board/twentytwentyfive.jpg" alt="Board Photo" class="current-board-img" />
+        </div>
+        <button id="openPreviousBoards" class="view-previous-boards" type="button">
+          View Previous Boards
+        </button>
+      </div>
+    </section>
+    <div id="previousBoardsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="previousBoardsTitle"
+      aria-hidden="true">
+      <div class="modal-overlay" data-modal-close></div>
+      <div class="modal-dialog" role="document">
+        <button class="modal-close" type="button" aria-label="Close Previous Boards" data-modal-close>
+          &times;
+        </button>
+        <h2 id="previousBoardsTitle" class="sectionHeading">
+          Previous Boards
+        </h2>
+        <div class="past-boards">
+          <div class="container">
+            <h3 class="past-board-title">Board Of The Year 2022</h3>
+            <img src="/board/twentytwentytwo.jpg" alt="Board Photo" class="twentytwentytwo" />
+          </div>
+          <div class="container">
+            <h3 class="past-board-title">Board Of The Year 2023/2024</h3>
+            <img src="/board/twentytwentythree.jpg" alt="Board Photo" class="twentytwentythree" />
+          </div>
+          <div class="container">
+            <h3 class="past-board-title">Board Of The Year 2024/2025</h3>
+            <img src="/board/twentytwentyfour.jpg" alt="Board Photo" class="twentytwentyfour" />
           </div>
         </div>
       </div>
+    </div>
 
-      <div
-        id="projectModal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="projectModalTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-overlay" data-project-modal-close></div>
-        <div class="modal-dialog" role="document">
-          <button
-            class="modal-close"
-            type="button"
-            aria-label="Close Project Details"
-            data-project-modal-close
-          >
-            &times;
-          </button>
-          <h2 id="projectModalTitle" class="sectionHeading"></h2>
-          <div id="projectModalContent" class="projectModalContent"></div>
-        </div>
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"
+      aria-hidden="true">
+      <div class="modal-overlay" data-project-modal-close></div>
+      <div class="modal-dialog" role="document">
+        <button class="modal-close" type="button" aria-label="Close Project Details" data-project-modal-close>
+          &times;
+        </button>
+        <h2 id="projectModalTitle" class="sectionHeading"></h2>
+        <div id="projectModalContent" class="projectModalContent"></div>
       </div>
-      <section id="projects">
-        <div class="content">
-          <h2 class="projectsTitle sectionHeading">Projects</h2>
-          <!-- <p class="projectsDesc">
+    </div>
+    <section id="projects">
+      <div class="content">
+        <h2 class="projectsTitle sectionHeading">Projects</h2>
+        <!-- <p class="projectsDesc">
             Stay tuned for our upcoming mathematical endeavors.
           </p> -->
-          <div class="projectsGrid" role="list">
-            <article class="projectCard" role="listitem">
-              <img src="/apeiro.png" alt="APEIRO" class="projectCardImage" />
-              <div class="projectCardBody">
-                <h3 class="projectCardTitle">'APEIRO</h3>
-                <p class="projectCardDesc">
-                  Apeiro is an annual Mathematics day, organized by the
-                  Mathematics Society of Ananda College.
-                </p>
-                <button
-                  class="projectButton"
-                  type="button"
-                  data-project="apeiro"
-                >
-                  Learn More
-                </button>
-              </div>
-            </article>
-            <article class="projectCard" role="listitem">
-              <img
-                src="/mathematics.png"
-                alt="Mathematics"
-                class="projectCardImage"
-              />
-              <div class="projectCardBody">
-                <h3 class="projectCardTitle">MATHEMATICS</h3>
-                <p class="projectCardDesc">
-                  Mathemics is an all island inter school mathematics
-                  competition organized by the Ananda College Mathematics
-                  Society.
-                </p>
-                <button
-                  class="projectButton"
-                  type="button"
-                  data-project="mathematics"
-                >
-                  Learn More
-                </button>
-              </div>
-            </article>
-            <article class="projectCard" role="listitem">
-              <img
-                src="/numeracy.png"
-                alt="Numeracy"
-                class="projectCardImage"
-              />
-              <div class="projectCardBody">
-                <h3 class="projectCardTitle">NUMERACY</h3>
-                <p class="projectCardDesc">
-                  Numeracy is a captivating intra school quiz competition that
-                  aims to challenge students' mathematical abilities and
-                  inspires a love for the subject.
-                </p>
-                <button
-                  class="projectButton"
-                  type="button"
-                  data-project="numeracy"
-                >
-                  Learn More
-                </button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="achievements">
-        <div class="content">
-          <h1 class="sectionHeading">Achievements</h1>
-          <div class="cardContainer">
-            <div class="card">
-              <h1 class="cardTitle">MergeStat 4.0</h1>
-              <div class="cardDesc">
-                It is with immense pride that we announce the Ananda College
-                Mathematics Society has secured the Overall Championship at
-                MergeStat 4.0.
-              </div>
-              <button class="learnMore" data-modal="achievementModal">
+        <div class="projectsGrid" role="list">
+          <article class="projectCard" role="listitem">
+            <img src="/apeiro.png" alt="APEIRO" class="projectCardImage" />
+            <div class="projectCardBody">
+              <h3 class="projectCardTitle">'APEIRO</h3>
+              <p class="projectCardDesc">
+                Apeiro is an annual Mathematics day, organized by the
+                Mathematics Society of Ananda College.
+              </p>
+              <button class="projectButton" type="button" data-project="apeiro">
                 Learn More
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Achievement Modal -->
-      <div id="achievementModal" class="modal" role="dialog" aria-hidden="true">
-        <div class="modal-overlay" data-modal-close></div>
-        <div class="modal-dialog" role="document">
-          <button class="modal-close" aria-label="Close modal" data-modal-close>
-            ×
-          </button>
-          <div class="modal-content">
-            <h2>Overall Championship at MergeStat 4.0</h2>
-            <p>
-              ​It is with immense pride that we announce the Ananda College
-              Mathematics Society has secured the Overall Championship at
-              MergeStat 4.0. <br /><br />​Our heartfelt congratulations to the
-              team for their outstanding performance and dedication in this
-              challenging competition, hosted by the Department of Statistics,
-              University of Colombo. This achievement is a testament to your
-              hard work and analytical prowess. <br /><br />​Well done,
-              champions!
-            </p>
-          </div>
+          </article>
+          <article class="projectCard" role="listitem">
+            <img src="/mathematics.png" alt="Mathematics" class="projectCardImage" />
+            <div class="projectCardBody">
+              <h3 class="projectCardTitle">MATHEMATICS</h3>
+              <p class="projectCardDesc">
+                Mathemics is an all island inter school mathematics
+                competition organized by the Ananda College Mathematics
+                Society.
+              </p>
+              <button class="projectButton" type="button" data-project="mathematics">
+                Learn More
+              </button>
+            </div>
+          </article>
+          <article class="projectCard" role="listitem">
+            <img src="/numeracy.png" alt="Numeracy" class="projectCardImage" />
+            <div class="projectCardBody">
+              <h3 class="projectCardTitle">NUMERACY</h3>
+              <p class="projectCardDesc">
+                Numeracy is a captivating intra school quiz competition that
+                aims to challenge students' mathematical abilities and
+                inspires a love for the subject.
+              </p>
+              <button class="projectButton" type="button" data-project="numeracy">
+                Learn More
+                </but ton>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <section id="contact">
-        <div class="content contactContent">
-          <h1 class="sectionHeading">Contact Us</h1>
-          <div class="contactIntro">
-            <p class="sectionHeading">Contact</p>
-            <p class="contactLead">
-              Have a question, want to collaborate, or just want to learn more
-              about our initiatives? Drop us a line using the form or reach out
-              directly to our board members.
+    <section id="achievements">
+      <div class="content">
+        <h1 class="sectionHeading">Achievements</h1>
+        <div class="cardContainer">
+          <article class="card">
+            <h3 class="cardTitle">MergeStat 4.0</h3>
+            <p class="cardDesc">
+              It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall
+              Championship at
+              MergeStat 4.0
             </p>
-
-            <div class="contactNumbers" role="list">
-              <article class="contactNumberCard" role="listitem">
-                <p class="contactRole">President</p>
-                <p class="contactName">Manuja Abewardhana</p>
-                <a class="contactPhone" href="tel:+94766655617"
-                  >+94 76 665 5617</a
-                >
-              </article>
-              <article class="contactNumberCard" role="listitem">
-                <p class="contactRole">Joint Secretary</p>
-                <p class="contactName">Dineth Hettiarachchi</p>
-                <a class="contactPhone" href="tel:+94713818091"
-                  >+94 71 381 8091</a
-                >
-              </article>
-            </div>
-          </div>
-
-          <form id="contactForm" class="contactForm" novalidate>
-            <div class="inputGroup">
-              <label for="contactName">Full Name</label>
-              <input
-                type="text"
-                id="contactName"
-                name="name"
-                placeholder="John Doe"
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactEmail">Email</label>
-              <input
-                type="email"
-                id="contactEmail"
-                name="email"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactSubject">Subject</label>
-              <input
-                type="text"
-                id="contactSubject"
-                name="subject"
-                placeholder="I'm interested in..."
-                required
-              />
-            </div>
-            <div class="inputGroup">
-              <label for="contactMessage">Message</label>
-              <textarea
-                id="contactMessage"
-                name="message"
-                rows="5"
-                placeholder="Tell us how we can help"
-                required
-              ></textarea>
-            </div>
-
-            <div class="formActions">
-              <button type="submit" class="contactSubmit">Send Message</button>
-              <p class="formStatus" role="status" aria-live="polite"></p>
-            </div>
-          </form>
+            <button class="learnMore" data-achievement="ant1">Learn More</button>
+          </article>
+          <article class="card">
+            <h3 class="cardTitle">MathQuest</h3>
+            <p class="cardDesc">
+              1st runner up in MathQuest 1.0
+            </p>
+            <button class="learnMore" data-achievement="ant2">Learn More</button>
+          </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <div class="footerContent">
-        <div class="footerBrand">
-          <img src="/acms.png" alt="ACMS crest" class="footerLogo" />
-          <p class="footerTitle">Ananda College Mathematics Society</p>
-          <a
-            class="footerEmail"
-            href="mailto:anandacollegemaths.official@gmail.com"
-            >anandacollegemaths.official@gmail.com</a
-          >
+    <!-- Achievement Modal -->
+    <div id="achievementModal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-overlay" data-modal-close></div>
+      <div class="modal-dialog">
+        <button class="modal-close" data-modal-close aria-label="Close">&times;</button>
+        <div id="achievementModalContent" class="modal-content">
         </div>
-        <div class="footerGrid">
-          <div class="footerBlock">
-            <h3>Navigate</h3>
-            <ul class="footerLinks">
-              <li><a href="#main">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#board">Board</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#achievements">Achievements</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+      </div>
+    </div>
+
+    <section id="contact">
+      <div class="content contactContent">
+        <h1 class="sectionHeading">Contact Us</h1>
+        <div class="contactIntro">
+          <p class="sectionHeading">Contact</p>
+          <p class="contactLead">
+            Have a question, want to collaborate, or just want to learn more
+            about our initiatives? Drop us a line using the form or reach out
+            directly to our board members.
+          </p>
+
+          <div class="contactNumbers" role="list">
+            <article class="contactNumberCard" role="listitem">
+              <p class="contactRole">President</p>
+              <p class="contactName">Manuja Abewardhana</p>
+              <a class="contactPhone" href="tel:+94766655617">+94 76 665 5617</a>
+            </article>
+            <article class="contactNumberCard" role="listitem">
+              <p class="contactRole">Joint Secretary</p>
+              <p class="contactName">Dineth Hettiarachchi</p>
+              <a class="contactPhone" href="tel:+94713818091">+94 71 381 8091</a>
+            </article>
           </div>
-          <div class="footerBlock">
-            <h3>Contact Numbers</h3>
-            <ul class="footerContacts">
-              <li>
-                <span>President</span>
-                <a href="tel:+94766655617">+94 76 665 5617</a>
-              </li>
-              <li>
-                <span>Joint Secretary</span>
-                <a href="tel:+94713818091">+94 71 381 8091</a>
-              </li>
-            </ul>
+        </div>
+
+        <form id="contactForm" class="contactForm" novalidate>
+          <div class="inputGroup">
+            <label for="contactName">Full Name</label>
+            <input type="text" id="contactName" name="name" placeholder="John Doe" required />
           </div>
-          <div class="footerBlock">
-            <h3>Social</h3>
-            <div class="footerSocial">
-              <a
-                href="https://www.facebook.com/anandamathssociety/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Follow ACMS on Facebook"
-              >
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/ananda_maths"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Follow ACMS on Instagram"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="https://whatsapp.com/channel/0029Vaq7qHNJZg41Pe9BpG3t"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Follow ACMS on WhatsApp"
-              >
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-              <!-- <a
+          <div class="inputGroup">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="inputGroup">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" placeholder="I'm interested in..." required />
+          </div>
+          <div class="inputGroup">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us how we can help"
+              required></textarea>
+          </div>
+
+          <div class="formActions">
+            <button type="submit" class="contactSubmit">Send Message</button>
+            <p class="formStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footerContent">
+      <div class="footerBrand">
+        <img src="/acms.png" alt="ACMS crest" class="footerLogo" />
+        <p class="footerTitle">Ananda College Mathematics Society</p>
+        <a class="footerEmail"
+          href="mailto:anandacollegemaths.official@gmail.com">anandacollegemaths.official@gmail.com</a>
+      </div>
+      <div class="footerGrid">
+        <div class="footerBlock">
+          <h3>Navigate</h3>
+          <ul class="footerLinks">
+            <li><a href="#main">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#board">Board</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footerBlock">
+          <h3>Contact Numbers</h3>
+          <ul class="footerContacts">
+            <li>
+              <span>President</span>
+              <a href="tel:+94766655617">+94 76 665 5617</a>
+            </li>
+            <li>
+              <span>Joint Secretary</span>
+              <a href="tel:+94713818091">+94 71 381 8091</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footerBlock">
+          <h3>Social</h3>
+          <div class="footerSocial">
+            <a href="https://www.facebook.com/anandamathssociety/" target="_blank" rel="noreferrer"
+              aria-label="Follow ACMS on Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/ananda_maths" target="_blank" rel="noreferrer"
+              aria-label="Follow ACMS on Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vaq7qHNJZg41Pe9BpG3t" target="_blank" rel="noreferrer"
+              aria-label="Follow ACMS on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <!-- <a
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -607,15 +445,16 @@
               >
                 <i class="fa-brands fa-youtube"></i>
               </a> -->
-            </div>
           </div>
         </div>
       </div>
-      <p class="footerCopy">
-        © <span id="currentYear"></span> ACMS. All rights reserved.
-      </p>
-    </footer>
+    </div>
+    <p class="footerCopy">
+      © <span id="currentYear"></span> ACMS. All rights reserved.
+    </p>
+  </footer>
 
-    <script src="/script.js"></script>
-  </body>
+  <script src="/script.js"></script>
+</body>
+
 </html>

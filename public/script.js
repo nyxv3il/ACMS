@@ -134,7 +134,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Achievement modal functions
 const openAchievementModal = () => {
   if (!achievementModal) return;
   achievementModal.classList.add("is-open");
@@ -148,6 +147,43 @@ const closeAchievementModal = () => {
   achievementModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("no-scroll");
 };
+
+const achievementDetails = {
+  ant1: {
+    title: "Overall Championship at MergeStat 4.0",
+    description: "​It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall Championship at MergeStat 4.0.<br><br>​Our heartfelt congratulations to the team for their outstanding performance and dedication in this challenging competition, hosted by the Department of Statistics, University of Colombo. This achievement is a testament to your hard work and analytical prowess.<br><br>​Well done, champions! "
+  },
+  ant2: {
+    title: "🥈 1st Runner-Up 🥈 in MathQuest 1.0",
+    description: "An outstanding performance at MathQuest 1.0! A journey defined by precision, perseverance, and sharp intellect. Finishing strong as the 1st Runner-Up.Proof that excellence is built through dedication and courage. Well deserved! 👏✨<br><br>#MathQuest<br>#1stRunnerUp<br>#REXTRO2025"
+  }
+};
+
+const achievementModalContent = document.getElementById("achievementModalContent");
+
+document.addEventListener("click", (e) => {
+  if (e.target.matches("[data-achievement]")) {
+    const key = e.target.getAttribute("data-achievement");
+    const data = achievementDetails[key];
+
+    if (data && achievementModal) {
+      achievementModalContent.innerHTML = `
+        <h2>${data.title}</h2>
+        <p>${data.description}</p>
+      `;
+      openAchievementModal();
+    }
+  }
+});
+
+// 3. Ensure Close Buttons Work
+// (Using your existing data-modal-close logic)
+document.querySelectorAll("[data-modal-close]").forEach(trigger => {
+  trigger.addEventListener("click", () => {
+    closeAchievementModal();
+    closeModal(); // For previous boards
+  });
+});
 
 // Achievement modal event listeners
 document.addEventListener("click", (e) => {
