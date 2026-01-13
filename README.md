@@ -1,2 +1,2 @@
 ## ⭕ In Development ⭕
-[dev server](http://snowiee.duckdns.org)
+acms.nyxv3il.com
