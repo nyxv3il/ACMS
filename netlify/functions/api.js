@@ -39,7 +39,7 @@ app.post("/api/contact", async (req, res) => {
           },
           To: [
             {
-              Email: process.env.TO_EMAIL,
+              Email: "anandacollegemaths.official@gmail.com",
               Name: "ACMS Team",
             },
           ],
