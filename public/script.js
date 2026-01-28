@@ -9,7 +9,7 @@ const projectModal = document.getElementById("projectModal");
 const projectModalTitle = document.getElementById("projectModalTitle");
 const projectModalContent = document.getElementById("projectModalContent");
 const projectModalCloseTriggers = document.querySelectorAll(
-  "[data-project-modal-close]"
+  "[data-project-modal-close]",
 );
 const projectButtons = document.querySelectorAll("[data-project]");
 const achievementModal = document.getElementById("achievementModal");
@@ -151,15 +151,19 @@ const closeAchievementModal = () => {
 const achievementDetails = {
   ant1: {
     title: "Overall Championship at MergeStat 4.0",
-    description: "​It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall Championship at MergeStat 4.0.<br><br>​Our heartfelt congratulations to the team for their outstanding performance and dedication in this challenging competition, hosted by the Department of Statistics, University of Colombo. This achievement is a testament to your hard work and analytical prowess.<br><br>​Well done, champions! "
+    description:
+      "​It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall Championship at MergeStat 4.0.<br><br>​Our heartfelt congratulations to the team for their outstanding performance and dedication in this challenging competition, hosted by the Department of Statistics, University of Colombo. This achievement is a testament to your hard work and analytical prowess.<br><br>​Well done, champions! ",
   },
   ant2: {
     title: "🥈 1st Runner-Up 🥈 in MathQuest 1.0",
-    description: "An outstanding performance at MathQuest 1.0! A journey defined by precision, perseverance, and sharp intellect. Finishing strong as the 1st Runner-Up.Proof that excellence is built through dedication and courage. Well deserved! 👏✨<br><br>#MathQuest<br>#1stRunnerUp<br>#REXTRO2025"
-  }
+    description:
+      "An outstanding performance at MathQuest 1.0! A journey defined by precision, perseverance, and sharp intellect. Finishing strong as the 1st Runner-Up.Proof that excellence is built through dedication and courage. Well deserved! 👏✨<br><br>#MathQuest<br>#1stRunnerUp<br>#REXTRO2025",
+  },
 };
 
-const achievementModalContent = document.getElementById("achievementModalContent");
+const achievementModalContent = document.getElementById(
+  "achievementModalContent",
+);
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("[data-achievement]")) {
@@ -178,7 +182,7 @@ document.addEventListener("click", (e) => {
 
 // 3. Ensure Close Buttons Work
 // (Using your existing data-modal-close logic)
-document.querySelectorAll("[data-modal-close]").forEach(trigger => {
+document.querySelectorAll("[data-modal-close]").forEach((trigger) => {
   trigger.addEventListener("click", () => {
     closeAchievementModal();
     closeModal(); // For previous boards
@@ -210,7 +214,7 @@ document.getElementById("joinusBtn").addEventListener("click", (e) => {
   e.preventDefault();
   window.open(
     "https://docs.google.com/forms/d/e/1FAIpQLSerlMCEtkZGH-eFunZyPiv1vsia88wSrp7Y2dyIlXE5BpdOfw/viewform?usp=dialog",
-    "_blank"
+    "_blank",
   );
 });
 
