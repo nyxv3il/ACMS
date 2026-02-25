@@ -1,0 +1,42 @@
+[
+  {
+    "id": "apeiro",
+    "title": "'APEIRO",
+    "image": "/apeiro.png",
+    "alt": "APEIRO",
+    "summary": "Apeiro is an annual Mathematics day, organized by the Mathematics Society of Ananda College.",
+    "description": "Apeiro'26 is an annual Mathematics day, organized by the Mathematics Society of Ananda College to motivate and transform a love for mathematics into action. The exciting event brings students from various schools together on a common platform for a day of challenging competitions, interesting activities, and fruitful problem-solving sessions. <br><br> Taking place annually this is not merely a competitive event; it is a celebration of creativity and innovation and critical thinking in mathematics. Propelling collaboration and igniting intellectual curiosity, the event aims for enhanced problem-solving abilities in participants while also promoting teamwork and friendly competition. With splendid planning and enthusiasm, Apeiro'26 perfectly embodies the society's commitment to foster the next generation of mathematical thinkers and a thriving community of aspiring mathematicians.",
+    "link": "https://apeiro.acmaths.lk",
+    "linkText": "Register Now"
+  },
+  {
+    "id": "mathemics",
+    "title": "MATHEMICS",
+    "image": "/mathemics.jpg",
+    "alt": "Mathematics",
+    "summary": "Mathemics is an all island inter school mathematics competition organized by the Ananda College Mathematics Society.",
+    "description": "Mathemics'26 is an all island inter school mathematics competition organized by the Ananda College Mathematics Society. This event seeks to bring together young mathematicians of this country to offer the challenge of performing excellently in mathematical problem solving and analytical thinking. <br> <br> By fostering collaboration, creativity, and love for mathematics amongst students, the competition attains the following goals of allowing them to display their talents, gain confidence, and inspire a sense of camaraderie. In support of its vision for inclusivity and excellence, Mathemics will provide a nurturing environment for the next generation of problem solvers and critical thinkers, which will bring vitality to the larger mathematics community.",
+    "link": "https://mathemics.nyxv3il.com",
+    "linkText": "Register Now"
+  },
+  {
+    "id": "numeracy",
+    "title": "NUMERACY",
+    "image": "/numeracy.png",
+    "alt": "Numeracy",
+    "summary": "Numeracy is a captivating intra school quiz competition that aims to challenge students' mathematical abilities and inspires a love for the subject.",
+    "description": "Organized by the Ananda College Mathematics Society, Numeracy is a captivating intra school quiz competition that aims to challenge students' mathematical abilities and inspires a love for the subject. In this opportunity for students to be light, they compete through challenging rounds with the aim of showcasing critical thinking and problem solving skills. With a mixed array of rounds, Numeracy pits individual performances against team concepts before moving into territory that invites the students to dig deep from basic arithmetic to crystalline applications in reality. <br> <br> It provides an opportunity for the students not only to test their academic upbringing but also the needlessly invincible spirit of being challenged to think creatively and work collaboratively to solve problems under a time constraint. Which may further be extended towards academic pursuit. By inclining to the notion of competition, Numeracy creates a friendly, motivational atmosphere for students to showcase their talents, develop their minds, and build self confidence to apply the concept in real time situations. Numeracy seeks in the long run to extent a lifelong love for learning, developing an interest in mathematics with the interpretation of academic excellence.",
+    "link": "",
+    "linkText": "Visit Website"
+  },
+  {
+    "id": "euclid",
+    "title": "EUCLID",
+    "image": "/euclid.jpg",
+    "alt": "Numeracy",
+    "summary": "Inter-School Article Writing and Graphics Designing Competition",
+    "description": "'''THE COUNTDOWN TO ETERNITY...'''<br><br>EUCLID '26<br><br>The Inter-School Article Writing and Graphics Designing Competition_<br>By The Mathematics Society of Ananda College<br><br>SUBMISSIONS CLOSING SOON<br><br>> Don't let your chance to solve the legend expire; secure your entry before the window shuts.",
+    "link": "https://euclid.acmaths.lk",
+    "linkText": "Visit Website"
+  }
+]

@@ -182,80 +182,14 @@
     <section id="board">
       <div class="content">
         <h2 class="boardTitle sectionHeading">Board Of Officials</h2>
-        <div class="cardContainer">
-          <div class="president">
-            <div class="card">
-              <img loading="lazy" src="/board/manuja.jpg" alt="President" class="cardImg" />
-              <div class="cardInfo">
-                <h3 class="cardName">Manuja Abewardhana</h3>
-                <p class="cardTitle">President</p>
-              </div>
-            </div>
-          </div>
-          <div class="others">
-            <div class="card">
-              <img loading="lazy" src="/board/javiru.jpg" alt="Joint Secretary" class="cardImg" />
-              <div class="cardInfo">
-                <h3 class="cardName">Javiru Jinasena</h3>
-                <p class="cardTitle">Joint Secretary</p>
-              </div>
-            </div>
-            <div class="card">
-              <img loading="lazy" src="/board/dineth.jpg" alt="Joint Secretary" class="cardImg" />
-              <div class="cardInfo">
-                <h3 class="cardName">Dineth Hettiarachchi</h3>
-                <p class="cardTitle">Joint Secretary</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="boardFeatured" class="cardContainer"></div>
         <div class="board-members">
           <div class="heading">Board Members</div>
-          <div class="list">
-            <span>Dulina Meegahawatte -
-              <p>Chief Coordinator</p>
-            </span>
-            <span>Javith Bhashitha -
-              <p>Treasurer</p>
-            </span>
-            <span>Tharana Bandara -
-              <p>Vice President</p>
-            </span>
-            <span>Abhiman Sanhida -
-              <p>Assistant Secretary</p>
-            </span>
-            <span>Januka Athukorala -
-              <p>Assistant Treasurer</p>
-            </span>
-            <span>Visal Wathmira -
-              <p>Media Coordinator</p>
-            </span>
-            <span>Sanuga Ubayarathna -
-              <p>Quiz Coordinator</p>
-            </span>
-            <span>Nethum Fernando -
-              <p>Editor</p>
-            </span>
-            <span>Lisath Walisundara -
-              <p>Organizer</p>
-            </span>
-            <span>Senuka Sensara -
-              <p>Organizer</p>
-            </span>
-            <span>Himesh Nethum -
-              <p>Organizer</p>
-            </span>
-            <span>Dhanik Sellahewa -
-              <p>Organizer</p>
-            </span>
-            <span>Sathija Nimthara -
-              <p>Organizer</p>
-            </span>
-          </div>
+          <div id="boardMembersList" class="list"></div>
         </div>
         <div class="current-board-photo">
-          <h3 class="board-photo-title">Board Of The Year 2025/2026</h3>
-          <img loading="lazy" src="/board/twentytwentyfive.jpg" alt="Board Photo" class="current-board-img" />
+          <h3 id="currentBoardTitle" class="board-photo-title"></h3>
+          <img loading="lazy" id="currentBoardImage" src="" alt="Board Photo" class="current-board-img" />
         </div>
         <button id="openPreviousBoards" class="view-previous-boards" type="button">
           View Previous Boards
@@ -306,73 +240,14 @@
         <!-- <p class="projectsDesc">
             Stay tuned for our upcoming mathematical endeavors.
           </p> -->
-        <div class="projectsGrid" role="list">
-          <article class="projectCard" role="listitem">
-            <img loading="lazy" src="/apeiro.png" alt="APEIRO" class="projectCardImage" />
-            <div class="projectCardBody">
-              <h3 class="projectCardTitle">'APEIRO</h3>
-              <p class="projectCardDesc">
-                Apeiro is an annual Mathematics day, organized by the
-                Mathematics Society of Ananda College.
-              </p>
-              <button class="projectButton" type="button" data-project="apeiro">
-                Learn More
-              </button>
-            </div>
-          </article>
-          <article class="projectCard" role="listitem">
-            <img loading="lazy" src="/mathematics.png" alt="Mathematics" class="projectCardImage" />
-            <div class="projectCardBody">
-              <h3 class="projectCardTitle">MATHEMATICS</h3>
-              <p class="projectCardDesc">
-                Mathemics is an all island inter school mathematics
-                competition organized by the Ananda College Mathematics
-                Society.
-              </p>
-              <button class="projectButton" type="button" data-project="mathematics">
-                Learn More
-              </button>
-            </div>
-          </article>
-          <article class="projectCard" role="listitem">
-            <img loading="lazy" src="/numeracy.png" alt="Numeracy" class="projectCardImage" />
-            <div class="projectCardBody">
-              <h3 class="projectCardTitle">NUMERACY</h3>
-              <p class="projectCardDesc">
-                Numeracy is a captivating intra school quiz competition that
-                aims to challenge students' mathematical abilities and
-                inspires a love for the subject.
-              </p>
-              <button class="projectButton" type="button" data-project="numeracy">
-                Learn More
-                </but ton>
-            </div>
-          </article>
-        </div>
+        <div id="projectsGrid" class="projectsGrid" role="list"></div>
       </div>
     </section>
 
     <section id="achievements">
       <div class="content">
         <h1 class="sectionHeading">Achievements</h1>
-        <div class="cardContainer">
-          <article class="card">
-            <h3 class="cardTitle">MergeStat 4.0</h3>
-            <p class="cardDesc">
-              It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall
-              Championship at
-              MergeStat 4.0
-            </p>
-            <button class="learnMore" data-achievement="ant1">Learn More</button>
-          </article>
-          <article class="card">
-            <h3 class="cardTitle">MathQuest</h3>
-            <p class="cardDesc">
-              1st runner up in MathQuest 1.0
-            </p>
-            <button class="learnMore" data-achievement="ant2">Learn More</button>
-          </article>
-        </div>
+        <div id="achievementsGrid" class="cardContainer"></div>
       </div>
     </section>
 

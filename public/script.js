@@ -11,25 +11,160 @@ const projectModalContent = document.getElementById("projectModalContent");
 const projectModalCloseTriggers = document.querySelectorAll(
   "[data-project-modal-close]",
 );
-const projectButtons = document.querySelectorAll("[data-project]");
 const achievementModal = document.getElementById("achievementModal");
 const achievementModalCloseTriggers =
   document.querySelectorAll("[data-modal-close]");
+const achievementModalContent = document.getElementById(
+  "achievementModalContent",
+);
 
-// Project descriptions
-const projectDescriptions = {
-  apeiro: {
-    title: "'APEIRO",
-    description: `Apeiro'26 is an annual Mathematics day, organized by the Mathematics Society of Ananda College to motivate and transform a love for mathematics into action. The exciting event brings students from various schools together on a common platform for a day of challenging competitions, interesting activities, and fruitful problem-solving sessions. <br><br> Taking place annually this is not merely a competitive event; it is a celebration of creativity and innovation and critical thinking in mathematics. Propelling collaboration and igniting intellectual curiosity, the event aims for enhanced problem-solving abilities in participants while also promoting teamwork and friendly competition. With splendid planning and enthusiasm, Apeiro'26 perfectly embodies the society's commitment to foster the next generation of mathematical thinkers and a thriving community of aspiring mathematicians.`,
-  },
-  mathematics: {
-    title: "MATHEMATICS",
-    description: `Mathemics'26 is an all island inter school mathematics competition organized by the Ananda College Mathematics Society. This event seeks to bring together young mathematicians of this country to offer the challenge of performing excellently in mathematical problem solving and analytical thinking. <br> <br> By fostering collaboration, creativity, and love for mathematics amongst students, the competition attains the following goals of allowing them to display their talents, gain confidence, and inspire a sense of camaraderie. In support of its vision for inclusivity and excellence, Mathemics will provide a nurturing environment for the next generation of problem solvers and critical thinkers, which will bring vitality to the larger mathematics community.`,
-  },
-  numeracy: {
-    title: "NUMERACY",
-    description: `Organized by the Ananda College Mathematics Society, Numeracy is a captivating intra school quiz competition that aims to challenge students' mathematical abilities and inspires a love for the subject. In this opportunity for students to be light, they compete through challenging rounds with the aim of showcasing critical thinking and problem solving skills. With a mixed array of rounds, Numeracy pits individual performances against team concepts before moving into territory that invites the students to dig deep from basic arithmetic to crystalline applications in reality. <br> <br> It provides an opportunity for the students not only to test their academic upbringing but also the needlessly invincible spirit of being challenged to think creatively and work collaboratively to solve problems under a time constraint. Which may further be extended towards academic pursuit. By inclining to the notion of competition, Numeracy creates a friendly, motivational atmosphere for students to showcase their talents, develop their minds, and build self confidence to apply the concept in real time situations. Numeracy seeks in the long run to extent a lifelong love for learning, developing an interest in mathematics with the interpretation of academic excellence.`,
-  },
+const boardFeatured = document.getElementById("boardFeatured");
+const boardMembersList = document.getElementById("boardMembersList");
+const currentBoardTitle = document.getElementById("currentBoardTitle");
+const currentBoardImage = document.getElementById("currentBoardImage");
+const projectsGrid = document.getElementById("projectsGrid");
+const achievementsGrid = document.getElementById("achievementsGrid");
+
+let projectDescriptions = {};
+let achievementDetails = {};
+
+const loadJson = async (path) => {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${path}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+const createFeaturedCard = (member) => `
+  <div class="card">
+    <img loading="lazy" src="${member.image}" alt="${member.alt || member.role}" class="cardImg" />
+    <div class="cardInfo">
+      <h3 class="cardName">${member.name}</h3>
+      <p class="cardTitle">${member.role}</p>
+    </div>
+  </div>
+`;
+
+const renderBoardSection = (boardData) => {
+  if (!boardData) return;
+
+  if (boardFeatured && Array.isArray(boardData.featured)) {
+    const president = boardData.featured.find(
+      (member) => member.group === "president",
+    );
+    const others = boardData.featured.filter(
+      (member) => member.group !== "president",
+    );
+
+    boardFeatured.innerHTML = `
+      <div class="president">
+        ${president ? createFeaturedCard(president) : ""}
+      </div>
+      <div class="others">
+        ${others.map((member) => createFeaturedCard(member)).join("")}
+      </div>
+    `;
+  }
+
+  if (boardMembersList && Array.isArray(boardData.members)) {
+    boardMembersList.innerHTML = boardData.members
+      .map(
+        (member) => `
+          <span>${member.name} -
+            <p>${member.role}</p>
+          </span>
+        `,
+      )
+      .join("");
+  }
+
+  if (boardData.currentBoard) {
+    if (currentBoardTitle) {
+      currentBoardTitle.textContent = boardData.currentBoard.title || "";
+    }
+
+    if (currentBoardImage) {
+      currentBoardImage.src = boardData.currentBoard.image || "";
+      currentBoardImage.alt = boardData.currentBoard.alt || "Board Photo";
+    }
+  }
+};
+
+const renderProjectsSection = (projects) => {
+  if (!projectsGrid || !Array.isArray(projects)) return;
+
+  projectDescriptions = projects.reduce((acc, project) => {
+    acc[project.id] = {
+      title: project.title,
+      description: project.description,
+      link: project.link || "",
+      linkText: project.linkText || "",
+    };
+    return acc;
+  }, {});
+
+  projectsGrid.innerHTML = projects
+    .map(
+      (project) => `
+        <article class="projectCard" role="listitem">
+          <img loading="lazy" src="${project.image}" alt="${project.alt || project.title}" class="projectCardImage" />
+          <div class="projectCardBody">
+            <h3 class="projectCardTitle">${project.title}</h3>
+            <p class="projectCardDesc">
+              ${project.summary}
+            </p>
+            <button class="projectButton" type="button" data-project="${project.id}">
+              Learn More
+            </button>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+};
+
+const renderAchievementsSection = (achievements) => {
+  if (!achievementsGrid || !Array.isArray(achievements)) return;
+
+  achievementDetails = achievements.reduce((acc, achievement) => {
+    acc[achievement.id] = {
+      title: achievement.modalTitle || achievement.title,
+      description: achievement.description,
+    };
+    return acc;
+  }, {});
+
+  achievementsGrid.innerHTML = achievements
+    .map(
+      (achievement) => `
+        <article class="card">
+          <h3 class="cardTitle">${achievement.title}</h3>
+          <p class="cardDesc">
+            ${achievement.summary}
+          </p>
+          <button class="learnMore" data-achievement="${achievement.id}">Learn More</button>
+        </article>
+      `,
+    )
+    .join("");
+};
+
+const initializeDynamicContent = async () => {
+  const [boardData, projectsData, achievementsData] = await Promise.all([
+    loadJson("/data/board-members.json"),
+    loadJson("/data/projects.json"),
+    loadJson("/data/achievements.json"),
+  ]);
+
+  renderBoardSection(boardData);
+  renderProjectsSection(projectsData);
+  renderAchievementsSection(achievementsData);
 };
 
 navToggle.addEventListener("click", (e) => {
@@ -98,12 +233,22 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Project modal functions
 const openProjectModal = (projectKey) => {
   if (!projectModal || !projectDescriptions[projectKey]) return;
   const project = projectDescriptions[projectKey];
   projectModalTitle.textContent = project.title;
-  projectModalContent.innerHTML = `<p>${project.description}</p>`;
+  const hasLink = Boolean(project.link);
+  const linkHref = hasLink ? project.link : "#";
+  const buttonText =
+    project.linkText || (hasLink ? "Visit Website" : "Website Coming Soon");
+  const linkAttributes = hasLink
+    ? `target="_blank" rel="noopener noreferrer"`
+    : `aria-disabled="true"`;
+
+  projectModalContent.innerHTML = `
+    <p>${project.description}</p>
+    <a class="projectVisitButton${hasLink ? "" : " is-disabled"}" href="${linkHref}" ${linkAttributes}>${buttonText}</a>
+  `;
   projectModal.classList.add("is-open");
   projectModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("no-scroll");
@@ -116,12 +261,12 @@ const closeProjectModal = () => {
   document.body.classList.remove("no-scroll");
 };
 
-projectButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    const projectKey = button.getAttribute("data-project");
-    openProjectModal(projectKey);
-  });
+document.addEventListener("click", (e) => {
+  const projectButton = e.target.closest("[data-project]");
+  if (!projectButton) return;
+  e.preventDefault();
+  const projectKey = projectButton.getAttribute("data-project");
+  openProjectModal(projectKey);
 });
 
 projectModalCloseTriggers.forEach((trigger) => {
@@ -148,48 +293,29 @@ const closeAchievementModal = () => {
   document.body.classList.remove("no-scroll");
 };
 
-const achievementDetails = {
-  ant1: {
-    title: "Overall Championship at MergeStat 4.0",
-    description:
-      "​It is with immense pride that we announce the Ananda College Mathematics Society has secured the Overall Championship at MergeStat 4.0.<br><br>​Our heartfelt congratulations to the team for their outstanding performance and dedication in this challenging competition, hosted by the Department of Statistics, University of Colombo. This achievement is a testament to your hard work and analytical prowess.<br><br>​Well done, champions! ",
-  },
-  ant2: {
-    title: "🥈 1st Runner-Up 🥈 in MathQuest 1.0",
-    description:
-      "An outstanding performance at MathQuest 1.0! A journey defined by precision, perseverance, and sharp intellect. Finishing strong as the 1st Runner-Up.Proof that excellence is built through dedication and courage. Well deserved! 👏✨<br><br>#MathQuest<br>#1stRunnerUp<br>#REXTRO2025",
-  },
-};
-
-const achievementModalContent = document.getElementById(
-  "achievementModalContent",
-);
-
 document.addEventListener("click", (e) => {
-  if (e.target.matches("[data-achievement]")) {
-    const key = e.target.getAttribute("data-achievement");
-    const data = achievementDetails[key];
+  const achievementButton = e.target.closest("[data-achievement]");
+  if (!achievementButton) return;
 
-    if (data && achievementModal) {
-      achievementModalContent.innerHTML = `
-        <h2>${data.title}</h2>
-        <p>${data.description}</p>
-      `;
-      openAchievementModal();
-    }
+  const key = achievementButton.getAttribute("data-achievement");
+  const data = achievementDetails[key];
+
+  if (data && achievementModal) {
+    achievementModalContent.innerHTML = `
+      <h2>${data.title}</h2>
+      <p>${data.description}</p>
+    `;
+    openAchievementModal();
   }
 });
 
-// 3. Ensure Close Buttons Work
-// (Using your existing data-modal-close logic)
 document.querySelectorAll("[data-modal-close]").forEach((trigger) => {
   trigger.addEventListener("click", () => {
     closeAchievementModal();
-    closeModal(); // For previous boards
+    closeModal();
   });
 });
 
-// Achievement modal event listeners
 document.addEventListener("click", (e) => {
   if (e.target.matches("[data-modal='achievementModal']")) {
     e.preventDefault();
@@ -222,3 +348,5 @@ const currentYearEl = document.getElementById("currentYear");
 if (currentYearEl) {
   currentYearEl.textContent = new Date().getFullYear();
 }
+
+initializeDynamicContent();

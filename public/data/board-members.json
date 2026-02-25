@@ -1,0 +1,84 @@
+{
+  "featured": [
+    {
+      "name": "Manuja Abewardhana",
+      "role": "President",
+      "image": "/board/manuja.jpg",
+      "alt": "President",
+      "group": "president"
+    },
+    {
+      "name": "Javiru Jinasena",
+      "role": "Joint Secretary",
+      "image": "/board/javiru.jpg",
+      "alt": "Joint Secretary",
+      "group": "others"
+    },
+    {
+      "name": "Dineth Hettiarachchi",
+      "role": "Joint Secretary",
+      "image": "/board/dineth.jpg",
+      "alt": "Joint Secretary",
+      "group": "others"
+    }
+  ],
+  "members": [
+    {
+      "name": "Dulina Meegahawatte",
+      "role": "Chief Coordinator"
+    },
+    {
+      "name": "Javith Bhashitha",
+      "role": "Treasurer"
+    },
+    {
+      "name": "Tharana Bandara",
+      "role": "Vice President"
+    },
+    {
+      "name": "Abhiman Sanhida",
+      "role": "Assistant Secretary"
+    },
+    {
+      "name": "Januka Athukorala",
+      "role": "Assistant Treasurer"
+    },
+    {
+      "name": "Visal Wathmira",
+      "role": "Media Coordinator"
+    },
+    {
+      "name": "Sanuga Ubayarathna",
+      "role": "Quiz Coordinator"
+    },
+    {
+      "name": "Nethum Fernando",
+      "role": "Editor"
+    },
+    {
+      "name": "Lisath Walisundara",
+      "role": "Organizer"
+    },
+    {
+      "name": "Senuka Sensara",
+      "role": "Organizer"
+    },
+    {
+      "name": "Himesh Nethum",
+      "role": "Organizer"
+    },
+    {
+      "name": "Dhanik Sellahewa",
+      "role": "Organizer"
+    },
+    {
+      "name": "Sathija Nimthara",
+      "role": "Organizer"
+    }
+  ],
+  "currentBoard": {
+    "title": "Board Of The Year 2025/2026",
+    "image": "/board/twentytwentyfive.jpg",
+    "alt": "Board Photo"
+  }
+}
